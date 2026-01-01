@@ -1,115 +1,91 @@
-# Project Guide: Node.js to Python Flask Migration
+# Burger Palace Website - Project Guide
 
 ## Executive Summary
 
-**Project Completion: 86% (25 hours completed out of 29 total hours)**
+**Project Completion: 30% (54 hours completed out of 184 total hours)**
 
-This project successfully migrated a Node.js HTTP server to a Python 3 Flask application with complete functional parity. All 7 core requirements (G-001 through G-007) have been implemented, validated, and tested.
+This project implements a modern burger restaurant website frontend using React, TypeScript, and Vite. The application provides a complete user interface for browsing menus, user authentication, online ordering, and table reservations. All user-facing features are functional with simulated backend using Zustand state management and localStorage persistence.
 
 ### Key Achievements
-- Created production-quality Flask HTTP server (403 lines)
-- Implemented all timeout, signal handling, and error handling features
-- Comprehensive documentation (793 lines of README)
-- All validation tests pass (syntax, runtime, signals, errors)
-- Server starts, handles requests correctly, and shuts down gracefully
+- ✅ Complete React/TypeScript frontend application
+- ✅ 9 fully implemented pages with responsive design
+- ✅ 4 state management stores with persistence
+- ✅ 15 menu items across 5 categories
+- ✅ TypeScript compilation: 0 errors
+- ✅ Production build successful
 
-### Remaining Work
-Human review and minor production configuration tasks totaling 4 hours.
+### Critical Remaining Work
+- ❌ Backend API development (REST API for auth, orders, reservations)
+- ❌ Database integration (PostgreSQL/MongoDB)
+- ❌ Real authentication system (JWT, password hashing)
+- ❌ Unit and E2E testing
+- ❌ Production deployment configuration
 
 ---
 
-## Project Completion Metrics
+## Project Hours Breakdown
 
-### Hours Breakdown
-
-**Completed Work: 25 hours**
-
-| Component | Hours | Details |
-|-----------|-------|---------|
-| app.py Implementation | 14h | Flask app, routes, hooks, handlers, signals |
-| README.md Documentation | 6h | Installation, API reference, deployment guides |
-| Environment Setup | 2h | Virtual environment, dependencies, .gitignore |
-| Testing & Validation | 3h | Runtime testing, signal testing, error handling |
-
-**Remaining Work: 4 hours**
-
-| Task | Hours | Priority |
-|------|-------|----------|
-| Production code review | 2h | High |
-| Documentation review | 1h | Medium |
-| Production deployment config | 1h | Medium |
-
-**Total Project Hours: 29 hours**
-**Completion Percentage: 25/29 = 86%**
+### Calculation Summary
+- **Completed Work**: 54 hours
+- **Remaining Work**: 130 hours (including 1.25x uncertainty multiplier)
+- **Total Project Hours**: 184 hours
+- **Completion Percentage**: 54 / 184 = **29.3% (~30%)**
 
 ```mermaid
 pie title Project Hours Breakdown
-    "Completed Work" : 25
-    "Remaining Work" : 4
+    "Completed Work" : 54
+    "Remaining Work" : 130
 ```
 
----
+### Completed Hours Breakdown (54h total)
 
-## Validation Results Summary
+| Component | Hours | Details |
+|-----------|-------|---------|
+| Project Setup | 4h | Vite, TypeScript, Tailwind, PostCSS configuration |
+| Reusable Components | 8h | Header, Footer, MenuItemCard, CartItem |
+| Page Components | 24h | 9 pages (Home, Menu, Login, Register, Cart, Order, BookTable, Checkout, Profile) |
+| State Management | 10h | 4 Zustand stores (auth, cart, order, reservation) |
+| Data & Types | 4h | TypeScript interfaces, menu data (15 items) |
+| Documentation | 2h | README.md with setup instructions |
+| Build Configuration | 2h | vite.config, tsconfig, tailwind, postcss |
 
-### 1. Dependency Installation ✅ PASS
-- Virtual environment created with Python 3.12.3
-- Flask 3.1.2 and all transitive dependencies installed
-- Packages verified: blinker, click, Flask, itsdangerous, Jinja2, MarkupSafe, Werkzeug
+### Remaining Hours Breakdown (130h total including multipliers)
 
-### 2. Code Compilation ✅ PASS
-- Python syntax validation: PASS (py_compile)
-- Module import test: PASS
-- All Flask decorators and routes properly defined
-
-### 3. Runtime Testing ✅ PASS (5/5 tests)
-| Test | Result |
-|------|--------|
-| GET / → "Hello, World!" | ✅ PASS |
-| GET /test/path → "Hello, World!" | ✅ PASS |
-| POST /api → "Hello, World!" | ✅ PASS |
-| DELETE /resource → "Hello, World!" | ✅ PASS |
-| HTTP 200 status code | ✅ PASS |
-
-### 4. Signal Handling ✅ PASS
-- SIGTERM: Graceful shutdown with exit code 0
-- SIGINT: Graceful shutdown with exit code 0
-
-### 5. Error Handling ✅ PASS
-- Port conflict (EADDRINUSE): Exits with code 1
-- ISO 8601 timestamp logging verified
-
-### 6. Git Status ✅ CLEAN
-- All changes committed
-- Working tree clean
+| Task | Base Hours | With Multiplier |
+|------|------------|-----------------|
+| Backend API Development | 32h | 40h |
+| Database Setup | 12h | 15h |
+| Real Authentication | 16h | 20h |
+| Testing (Unit + E2E) | 20h | 25h |
+| Production Deployment | 12h | 15h |
+| Quality Improvements | 12h | 15h |
+| **Total** | **104h** | **130h** |
 
 ---
 
-## Feature Implementation Status
+## Validation Results
 
-| Requirement | Status | Verification |
-|-------------|--------|--------------|
-| G-001: Flask on port 3000 | ✅ Complete | Server starts on port 3000 |
-| G-002: "Hello, World!" response | ✅ Complete | All paths return correct response |
-| G-003: 30-second timeout | ✅ Complete | Threading.Timer implementation |
-| G-004: SIGTERM/SIGINT handlers | ✅ Complete | Clean shutdown verified |
-| G-005: Port/permission errors | ✅ Complete | EADDRINUSE/EACCES handled |
-| G-006: ISO 8601 logging | ✅ Complete | Format verified in output |
-| G-007: Input validation | ✅ Complete | HTTP 400 for bad requests |
+### Build Status
+| Check | Status | Details |
+|-------|--------|---------|
+| TypeScript Compilation | ✅ PASS | 0 errors |
+| Vite Build | ✅ PASS | 1611 modules transformed in 3.71s |
+| Development Server | ✅ PASS | Starts on port 5173 |
+| NPM Dependencies | ✅ PASS | 141 packages, 0 vulnerabilities |
 
----
+### Build Output
+```
+dist/index.html:           0.61 kB (gzip: 0.36 kB)
+dist/assets/index.css:    21.29 kB (gzip: 4.70 kB)
+dist/assets/index.js:    249.90 kB (gzip: 74.19 kB)
+```
 
-## Files Created/Modified
-
-| File | Action | Lines | Purpose |
-|------|--------|-------|---------|
-| app.py | CREATED | 403 | Flask HTTP server implementation |
-| requirements.txt | CREATED | 1 | Python dependencies (Flask==3.1.2) |
-| .gitignore | CREATED | 39 | Python-specific ignore patterns |
-| README.md | UPDATED | 793 | Comprehensive documentation |
-| server.js | DELETED | - | Replaced by Python implementation |
-
-**Total: 1,236 lines of code/documentation**
+### Git Statistics
+- **Total Commits**: 8
+- **Files Changed**: 36
+- **Lines Added**: 8,491
+- **Lines Removed**: 1,329
+- **Net Change**: +7,162 lines
 
 ---
 
@@ -119,109 +95,114 @@ pie title Project Hours Breakdown
 
 | Requirement | Version | Purpose |
 |-------------|---------|---------|
-| Python | >= 3.9 | Runtime environment |
-| pip | >= 21.0 | Package management |
-| Available Port | 3000 | HTTP server binding |
+| Node.js | 18.x or higher | JavaScript runtime |
+| npm | 9.x or higher | Package manager |
+| Git | 2.x or higher | Version control |
 
-### Step 1: Clone and Navigate
+### Environment Setup
+
+1. **Clone the repository**
 ```bash
-cd /tmp/blitzy/3112_03/blitzy5414a99d6
+git clone <repository-url>
+cd burger-palace
 ```
 
-### Step 2: Create Virtual Environment
+2. **Verify Node.js version**
 ```bash
-python3 -m venv venv
+node --version  # Should be 18.x or higher
+npm --version   # Should be 9.x or higher
 ```
 
-### Step 3: Activate Virtual Environment
+### Dependency Installation
+
 ```bash
-# Linux/macOS
-source venv/bin/activate
+# Install all dependencies
+npm install
 
-# Windows
-venv\Scripts\activate
+# Expected output:
+# added 141 packages in X seconds
 ```
 
-### Step 4: Install Dependencies
+### Application Startup
+
+#### Development Mode
 ```bash
-pip install -r requirements.txt
+npm run dev
+
+# Expected output:
+# VITE v6.x.x ready in XXX ms
+# ➜ Local: http://localhost:5173/
 ```
 
-**Expected Output:**
-```
-Successfully installed Flask-3.1.2 Werkzeug-3.1.x Jinja2-3.1.x ...
-```
-
-### Step 5: Start the Server
+#### Production Build
 ```bash
-python app.py
+# Build for production
+npm run build
+
+# Preview production build
+npm run preview
 ```
 
-**Expected Output:**
-```
-Server listening on port 3000
-Visit http://localhost:3000 or use curl -v http://localhost:3000
- * Serving Flask app 'app'
- * Debug mode: off
- * Running on all addresses (0.0.0.0)
- * Running on http://127.0.0.1:3000
-```
+### Verification Steps
 
-### Step 6: Verify Server (New Terminal)
+1. **Open browser** to http://localhost:5173/
+2. **Verify homepage loads** with "The Best Gourmet Burgers in Town" heading
+3. **Test navigation** - Click "Menu" link, verify menu items display
+4. **Test cart functionality** - Click "Add to Cart" on any item
+5. **Test authentication** - Navigate to Login/Register pages
+6. **Test table booking** - Navigate to "Book a Table" page
+
+### Available Scripts
+
+| Command | Description |
+|---------|-------------|
+| `npm run dev` | Start development server on port 5173 |
+| `npm run build` | Build for production (TypeScript + Vite) |
+| `npm run preview` | Preview production build locally |
+| `npm run lint` | Run ESLint for code quality |
+
+### Example Usage
+
+#### Test with curl
 ```bash
-# Test basic request
-curl http://localhost:3000/
-# Expected: Hello, World!
-
-# Test any path
-curl http://localhost:3000/test/path
-# Expected: Hello, World!
-
-# Test POST method
-curl -X POST http://localhost:3000/api
-# Expected: Hello, World!
-
-# Test DELETE method
-curl -X DELETE http://localhost:3000/resource
-# Expected: Hello, World!
-```
-
-### Step 7: Stop Server
-```bash
-# Option 1: Press Ctrl+C in server terminal
-# Option 2: Send SIGTERM
-kill -SIGTERM $(pgrep -f "python app.py")
-```
-
-**Expected Shutdown Output:**
-```
-Received SIGTERM, shutting down gracefully...
-Server closed successfully
+# Start dev server first, then in another terminal:
+curl -s http://localhost:5173/ | grep -o "<title>.*</title>"
+# Expected: <title>Burger Palace - Gourmet Burgers</title>
 ```
 
 ---
 
 ## Human Tasks Remaining
 
-### High Priority Tasks
+### Detailed Task Table
 
-| Task | Description | Hours | Severity |
-|------|-------------|-------|----------|
-| Code Review | Review app.py implementation for best practices | 2h | High |
+| Priority | Task | Description | Hours | Severity |
+|----------|------|-------------|-------|----------|
+| 🔴 High | Backend API Development | Implement REST API for authentication, orders, and reservations using Node.js/Express or Python/FastAPI | 40h | Critical |
+| 🔴 High | Database Integration | Set up PostgreSQL or MongoDB with proper schema, migrations, and connection pooling | 15h | Critical |
+| 🔴 High | Real Authentication | Implement JWT-based authentication with password hashing (bcrypt), session management | 20h | Critical |
+| 🟡 Medium | Unit Testing | Write unit tests for React components and Zustand stores using Jest and React Testing Library | 15h | Important |
+| 🟡 Medium | E2E Testing | Implement end-to-end tests using Cypress or Playwright for critical user flows | 10h | Important |
+| 🟡 Medium | Docker Configuration | Create Dockerfile and docker-compose.yml for containerized deployment | 8h | Important |
+| 🟡 Medium | CI/CD Pipeline | Set up GitHub Actions or similar for automated testing and deployment | 7h | Important |
+| 🟢 Low | Form Validation | Enhance form validation with better error messages and client-side validation | 4h | Enhancement |
+| 🟢 Low | Error Handling | Improve error boundaries and user-facing error messages | 4h | Enhancement |
+| 🟢 Low | Accessibility | Ensure WCAG 2.1 AA compliance with proper ARIA labels and keyboard navigation | 4h | Enhancement |
+| 🟢 Low | Performance | Implement code splitting, lazy loading, and image optimization | 3h | Enhancement |
+| | **TOTAL** | | **130h** | |
 
-### Medium Priority Tasks
+### Task Dependencies
 
-| Task | Description | Hours | Severity |
-|------|-------------|-------|----------|
-| Documentation Review | Verify README.md accuracy and completeness | 1h | Medium |
-| Production Config | Configure for production deployment if needed | 1h | Medium |
-
-### Task Hours Summary
-| Priority | Total Hours |
-|----------|-------------|
-| High | 2h |
-| Medium | 2h |
-| **Total** | **4h** |
+```mermaid
+flowchart TD
+    A[Backend API Development] --> B[Database Integration]
+    A --> C[Real Authentication]
+    B --> C
+    C --> D[Production Deployment]
+    E[Unit Testing] --> F[E2E Testing]
+    F --> D
+    D --> G[Go Live]
+```
 
 ---
 
@@ -231,54 +212,125 @@ Server closed successfully
 
 | Risk | Severity | Likelihood | Mitigation |
 |------|----------|------------|------------|
-| Flask dev server not production-ready | Medium | High | Use gunicorn for production |
-| Timeout threading may behave differently | Low | Low | Tested and verified working |
+| No backend API exists | 🔴 High | Certain | Implement REST API using Express.js or FastAPI |
+| Data not persisted in database | 🔴 High | Certain | Integrate PostgreSQL/MongoDB with proper ORM |
+| Authentication is simulated | 🔴 High | Certain | Implement JWT with secure password hashing |
+| No test coverage | 🟡 Medium | Certain | Add Jest unit tests and Cypress E2E tests |
+| No error monitoring | 🟡 Medium | Likely | Integrate Sentry or similar error tracking |
 
 ### Security Risks
 
 | Risk | Severity | Likelihood | Mitigation |
 |------|----------|------------|------------|
-| No authentication implemented | Low | N/A | Out of scope per requirements |
-| No HTTPS/TLS | Low | N/A | Out of scope per requirements |
+| No real authentication | 🔴 Critical | Certain | Implement JWT with httpOnly cookies |
+| Passwords stored in memory | 🔴 Critical | Certain | Use bcrypt for password hashing |
+| No CSRF protection | 🟡 Medium | Likely | Implement CSRF tokens |
+| No rate limiting | 🟡 Medium | Likely | Add rate limiting middleware |
 
 ### Operational Risks
 
 | Risk | Severity | Likelihood | Mitigation |
 |------|----------|------------|------------|
-| No unit tests in repository | Medium | N/A | Out of scope per requirements |
-| No CI/CD pipeline | Medium | N/A | Out of scope per requirements |
-
-### Integration Risks
-
-| Risk | Severity | Likelihood | Mitigation |
-|------|----------|------------|------------|
-| None identified | - | - | No external integrations required |
+| No production deployment | 🟡 Medium | Certain | Set up Vercel/Netlify for frontend, separate backend hosting |
+| No monitoring/logging | 🟡 Medium | Likely | Integrate logging service and monitoring |
+| No backup strategy | 🟡 Medium | Likely | Configure automated database backups |
+| No CDN for assets | 🟢 Low | Possible | Configure CloudFront or Cloudflare |
 
 ---
 
-## Production Deployment (Out of Scope but Documented)
+## Project Structure
 
-For production deployment, consider:
-
-```bash
-# Install gunicorn
-pip install gunicorn
-
-# Run with gunicorn
-gunicorn -w 4 -b 0.0.0.0:3000 app:app
 ```
+burger-palace/
+├── public/
+│   └── burger.svg              # Favicon
+├── src/
+│   ├── components/             # Reusable UI components
+│   │   ├── Header.tsx          # Navigation header with cart badge
+│   │   ├── Footer.tsx          # Site footer with contact info
+│   │   ├── MenuItemCard.tsx    # Menu item display card
+│   │   └── CartItem.tsx        # Cart item row component
+│   ├── pages/                  # Page components
+│   │   ├── HomePage.tsx        # Landing page with hero and popular items
+│   │   ├── MenuPage.tsx        # Full menu browsing
+│   │   ├── LoginPage.tsx       # User login form
+│   │   ├── RegisterPage.tsx    # User registration form
+│   │   ├── CartPage.tsx        # Shopping cart view
+│   │   ├── OrderPage.tsx       # Order placement flow
+│   │   ├── BookTablePage.tsx   # Table reservation form
+│   │   ├── CheckoutPage.tsx    # Checkout with delivery/pickup
+│   │   └── ProfilePage.tsx     # User profile with orders/reservations
+│   ├── store/                  # Zustand state stores
+│   │   ├── authStore.ts        # Authentication state
+│   │   ├── cartStore.ts        # Shopping cart state
+│   │   ├── orderStore.ts       # Order management state
+│   │   └── reservationStore.ts # Table booking state
+│   ├── data/
+│   │   └── menuItems.ts        # Menu data (15 items)
+│   ├── types/
+│   │   └── index.ts            # TypeScript interfaces
+│   ├── App.tsx                 # Main app with routing
+│   ├── main.tsx                # Entry point
+│   └── index.css               # Global styles
+├── package.json
+├── tsconfig.json
+├── vite.config.ts
+├── tailwind.config.js
+├── postcss.config.js
+└── README.md
+```
+
+---
+
+## Technology Stack
+
+| Category | Technology | Version |
+|----------|------------|---------|
+| Framework | React | 18.3.1 |
+| Language | TypeScript | 5.6.3 |
+| Build Tool | Vite | 6.0.7 |
+| Styling | Tailwind CSS | 3.4.17 |
+| State Management | Zustand | 5.0.3 |
+| Routing | React Router DOM | 7.1.1 |
+| Icons | Lucide React | 0.469.0 |
+
+---
+
+## Recommendations
+
+### Immediate Actions (Week 1)
+1. **Backend Selection**: Choose between Node.js/Express or Python/FastAPI for API
+2. **Database Setup**: Provision PostgreSQL or MongoDB instance
+3. **Authentication Design**: Plan JWT-based auth flow with refresh tokens
+
+### Short-Term (Weeks 2-4)
+1. **API Development**: Implement REST endpoints for all features
+2. **Database Integration**: Create schemas and migrations
+3. **Authentication**: Implement secure login/register with password hashing
+4. **Basic Testing**: Add critical path unit tests
+
+### Medium-Term (Weeks 5-8)
+1. **E2E Testing**: Implement Cypress tests for critical flows
+2. **CI/CD Pipeline**: Set up automated testing and deployment
+3. **Docker**: Containerize application for consistent deployments
+4. **Monitoring**: Add error tracking and performance monitoring
+
+### Long-Term (Weeks 9+)
+1. **Performance Optimization**: Code splitting, lazy loading
+2. **Accessibility Audit**: WCAG 2.1 AA compliance
+3. **SEO Optimization**: Meta tags, sitemap, structured data
+4. **Analytics**: User behavior tracking
 
 ---
 
 ## Conclusion
 
-The Node.js to Python Flask migration is **86% complete** with all core functionality implemented and validated. The remaining 4 hours of work consists of human review tasks that require manual intervention.
+The Burger Palace website frontend is fully implemented and functional with all user-facing features working correctly. The application demonstrates solid React/TypeScript architecture with proper state management and responsive design.
 
-### Quality Gates Status
-- [x] GATE 1: All validation tests pass
-- [x] GATE 2: Application runtime verified
-- [x] GATE 3: Zero unresolved compilation/runtime errors
-- [x] GATE 4: All in-scope files created and working
-- [ ] GATE 5: Human code review (pending)
+**To reach production readiness**, the primary focus should be on:
+1. Implementing a proper backend API
+2. Setting up a real database
+3. Adding secure authentication
+4. Establishing test coverage
 
-The project is ready for human review and production deployment.
+The estimated remaining work is **130 hours** with the current **30% completion** reflecting that while the frontend is complete, significant backend infrastructure is needed for a production deployment.

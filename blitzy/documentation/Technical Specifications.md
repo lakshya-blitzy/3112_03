@@ -423,6 +423,7 @@ flowchart TB
 **Python Flask Equivalent:**
 ```python
 # Pattern: signal.signal(signal.SIGTERM, shutdown_handler)
+
 ```
 
 | Aspect | Node.js | Python Flask |
@@ -588,13 +589,16 @@ flowchart TB
 
 ```bash
 # Create virtual environment
+
 python3 -m venv venv
 
 #### Activate virtual environment
+
 source venv/bin/activate  # Linux/macOS
 venv\Scripts\activate     # Windows
 
 #### Install dependencies
+
 pip install -r requirements.txt
 ```
 
